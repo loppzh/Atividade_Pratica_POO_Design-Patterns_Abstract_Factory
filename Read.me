@@ -1,0 +1,71 @@
+🧩 Atividade Prática 04 — Padrão de Projeto Abstract Factory
+
+Este repositório contém a resolução da Atividade Prática 04 da disciplina Programação Orientada a Objetos 2.
+O objetivo foi implementar, em Python, o padrão de projeto criacional Abstract Factory, com base em três diagramas de classes UML distintos.
+
+🏫 Informações da Atividade
+
+Instituição: Instituto Federal Catarinense (IFC) — Campus Araquari
+
+Curso: Bacharelado em Sistemas de Informação
+
+Disciplina: Programação Orientada a Objetos 2
+
+Professor: Paulo Cesar Fernandes de Oliveira, BSc, PhD
+
+O desafio consistiu em traduzir os diagramas UML fornecidos em código Python funcional e idiomático, aplicando corretamente os conceitos do padrão Abstract Factory.
+
+Benefícios:
+
+Desacoplamento: elimina condicionais e dependências diretas entre o cliente e as classes concretas.
+
+Consistência: garante que todos os objetos criados pertençam à mesma família, evitando combinações incorretas (por exemplo, uma ClassicChair com uma ScandinavianTable).
+
+⚙️ Estrutura da Implementação
+
+A solução em Python utiliza o módulo abc (Abstract Base Classes) para definir interfaces e abstrações.
+O código segue os quatro componentes principais do padrão:
+
+AbstractFactory (Fábrica Abstrata)
+Define a interface para as fábricas, com métodos como create_product_A() e create_product_B().
+
+Exemplo: FurnitureFactory, Corporation.
+
+ConcreteFactory (Fábrica Concreta)
+Implementa a interface da fábrica abstrata e sabe como criar os produtos de uma família específica.
+
+Exemplo: ScandinavianFactory, ClassicFactory, FutureVehicleCorporation.
+
+AbstractProduct (Produto Abstrato)
+Define a interface comum para cada tipo de produto.
+
+Exemplo: AbstractChair, AbstractDiningTable, ElectricVehicle.
+
+ConcreteProduct (Produto Concreto)
+Implementa os produtos específicos pertencentes a uma família.
+
+Exemplo: ScandinavianChair, ClassicChair, NextGenElectricCar.
+
+O cliente (as funções client_program) interage apenas com as interfaces abstratas, tornando simples a troca da família de produtos sem alterar o código cliente.
+
+📂 Exercícios Implementados
+
+O arquivo principal (seu_arquivo.py) contém as soluções para três exercícios baseados em diferentes diagramas UML:
+
+Fábrica de Móveis: cria famílias de móveis (Armário, Cadeira, Mesa de Jantar) nos estilos Escandinavo, Clássico e Contemporâneo.
+
+Fábrica de Veículos: cria famílias de veículos (a motor e elétricos) para diferentes corporações (FutureVehicle e NextGen).
+
+Fábrica de Equipamentos: cria famílias de equipamentos (Arma e Armadura) para diferentes classes de jogo (Melee, Ranged e Magic).
+
+💡 Principais Aprendizados
+
+Esta atividade foi essencial para consolidar o entendimento sobre padrões de projeto e o papel da abstração na arquitetura de software.
+
+Desacoplamento e Abstração: o cliente opera em um alto nível, sem conhecer as implementações concretas.
+
+Extensibilidade: novos estilos ou famílias podem ser adicionados sem modificar o código existente — aplicando o Princípio Aberto/Fechado (Open/Closed) do SOLID.
+
+Consistência entre produtos: o padrão garante compatibilidade entre objetos da mesma família.
+
+Uso de abc no Python: reforçou o uso de ABC e @abstractmethod para criar contratos claros entre classes.
